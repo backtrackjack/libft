@@ -6,7 +6,7 @@
 /*   By: jsellars <jsellars@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 16:47:26 by jsellars          #+#    #+#             */
-/*   Updated: 2021/10/13 17:47:45 by jsellars         ###   ########.fr       */
+/*   Updated: 2022/02/03 21:08:14 by jsellars         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@ writes int n to given file descriptor
 */
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	nb;
+	int		sign;
+	char	c;
 
+	sign = 1;
 	if (n < 0)
 	{
-		nb = -n;
 		ft_putchar_fd('-', fd);
+		sign = -1;
 	}
-	else
-		nb = n;
-	if (nb >= 10)
-		ft_putnbr_fd(nb / 10, fd);
-	ft_putchar_fd(nb % 10 + '0', fd);
+	if (n/10)
+		ft_putnbr_fd(n / 10 * sign, fd);
+	c = '0' + n % 10 * sign;
+	ft_putchar_fd(c, fd);
 }
