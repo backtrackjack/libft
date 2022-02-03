@@ -6,7 +6,7 @@
 /*   By: jsellars <jsellars@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 16:47:26 by jsellars          #+#    #+#             */
-/*   Updated: 2022/02/03 21:08:14 by jsellars         ###   ########.fr       */
+/*   Updated: 2022/02/03 21:47:35 by jsellars         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		sign = -1;
 	}
-	if (n/10)
+	if (n / 10)
 		ft_putnbr_fd(n / 10 * sign, fd);
 	c = '0' + n % 10 * sign;
 	ft_putchar_fd(c, fd);
