@@ -6,14 +6,14 @@
 /*   By: jsellars <jsellars@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 12:10:50 by jsellars          #+#    #+#             */
-/*   Updated: 2021/10/13 16:30:52 by jsellars         ###   ########.fr       */
+/*   Updated: 2022/02/18 18:55:45 by jsellars         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 //Function to check if a character is a space. returns 0 if false
-static int	isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == '\t' || c == '\n')
 		return (1);
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 	neg = 1;
 	s = str;
 	result = 0;
-	while (*s && isspace(*s))
+	while (*s && ft_isspace(*s))
 		s++;
 	if (*s == '-' || *s == '+')
 	{
